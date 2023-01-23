@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        customColor: '#3f3cbb',
+        customColor: '#3f3cbb', //This is an example a custom color
       },
     },
   },
