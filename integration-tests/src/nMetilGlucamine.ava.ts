@@ -1,5 +1,8 @@
 import { NearAccount, Worker } from 'near-workspaces';
 import anyTest, { TestFn } from 'ava';
+import * as dotenv from 'dotenv';
+import { join } from 'path';
+dotenv.config({path: join(__dirname, '../../', '.env')})
 
 const CONTRACT_ACCOUNT = process.env.NMETIL_CONTRACT;
 
