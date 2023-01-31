@@ -7,7 +7,7 @@ export default function initContract (contractAccount: string, blockId: string) 
     // Init the worker and start a Sandbox server
     const worker = await Worker.init();
 
-    // Deploy contract
+    // Using contract from testnet
     const root = worker.rootAccount;
 
     const contract = await root.importContract({
