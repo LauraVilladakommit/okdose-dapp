@@ -9,7 +9,7 @@
     "lint": "cd okdose && yarn eslint --cache . && cd .. && cd okdose-web && yarn eslint --cache . && cd .. && cd integration-tests && yarn eslint --cache .",
     "lint:fix": "cd okdose && yarn eslint --fix . && cd .. && cd okdose-web && yarn eslint --fix .",
     "format": "prettier --write './**/*.{js,jsx,ts,css,json}' --config ./.prettierrc",
-    "test": "cd okdoseweb && yarn test && cd .. && cd okdose && yarn test && cd .. && cd integration-tests && yarn test"
+    "test": "cd okdose-web && yarn test && cd .. && cd okdose && yarn test && cd .. && cd integration-tests && yarn test"
   },
   "devDependencies": {
     "@babel/core": "^7.20.7",
