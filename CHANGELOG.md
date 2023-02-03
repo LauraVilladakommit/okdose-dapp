@@ -6,3 +6,7 @@
 - Set up tailwind and i18next libraries
 - Set up first version of integration and unit tests
 - Added first version of the CI
+
+## 0.1.1 (03.02.2023)
+
+- Update the README links to the support documents
