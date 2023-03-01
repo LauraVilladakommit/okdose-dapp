@@ -53,7 +53,7 @@
       ]
     },
     "sodium_stibogluconate": {
-      "name": "Sodium stibogluconate",
+      "name": "Sodium Stibogluconate",
       "presentation": ["Amp 100 mg/ml", "20 $t(dosage_unit)"],
       "via": "IM",
       "frequency": "daily",
@@ -65,7 +65,7 @@
       ]
     },
     "pentamidine_isethionate": {
-      "name": "Pentamidine isethionate",
+      "name": "Pentamidine Isethionate",
       "presentation": ["Vial 300 mg, 60 mg/ml", "4 $t(dosage_unit)"],
       "via": "IM",
       "frequency": "each 3 days",
@@ -95,12 +95,7 @@
     },
     "amphotericin_b_liposomal": {
       "name": "Amphotericin B Liposomal",
-      "presentation": [
-        "Amphotericin B Liposomal - Blister vial x 50 mg",
-        "{{dose}} $t(dosage_unit)",
-        "immunocompetent patient",
-        "immunocompromised patient"
-      ],
+      "presentation": ["Blister vial x 50 mg"],
       "dosage_prescription": "{{volumeDose}} a day, infusion during 2 hours ({{weightDose}})",
       "warning": "Do not exceed 250 mg per day",
       "treatment_time": {

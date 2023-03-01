@@ -16,12 +16,12 @@ describe('Leishmaniasis smart contract prescription response check', () => {
   });
 
   test('It returns the correct properties for N-Metil Glucamine', async () => {
-    const dose = await Leishmaniasis.prescribeNMetilGlucamine(
+    const dose = await Leishmaniasis.leishmaniasisMedicines.nMetilGlucamine.prescription(
       nearInterface,
-      weight
+      {weight}
     );
 
-    expect(typeof Leishmaniasis.prescribeNMetilGlucamine).toBe('function');
+    expect(typeof Leishmaniasis.leishmaniasisMedicines.nMetilGlucamine.prescription).toBe('function');
     expect(dose.name).toBeDefined();
     expect(dose.presentation).toBeDefined();
     expect(dose.weightDose).toBeDefined();
@@ -32,13 +32,13 @@ describe('Leishmaniasis smart contract prescription response check', () => {
     expect(dose.warning).toBeDefined();
   });
 
-  test('It returns the correct properties for Sodium stibogluconato', async () => {
-    const dose = await Leishmaniasis.prescribeSodiumStibogluconate(
+  test('It returns the correct properties for Sodium Stibogluconato', async () => {
+    const dose = await Leishmaniasis.leishmaniasisMedicines.sodiumStibogluconate.prescription(
       nearInterface,
       weight
     );
 
-    expect(typeof Leishmaniasis.prescribeSodiumStibogluconate).toBe('function');
+    expect(typeof Leishmaniasis.leishmaniasisMedicines.sodiumStibogluconate.prescription).toBe('function');
     expect(dose.name).toBeDefined();
     expect(dose.presentation).toBeDefined();
     expect(dose.weightDose).toBeDefined();
@@ -49,13 +49,13 @@ describe('Leishmaniasis smart contract prescription response check', () => {
     expect(dose.warning).toBeDefined();
   });
 
-  test('It returns the correct properties for Pentamidine isethionate', async () => {
-    const dose = await Leishmaniasis.prescribePentamidineIsethionate(
+  test('It returns the correct properties for Pentamidine Isethionate', async () => {
+    const dose = await Leishmaniasis.leishmaniasisMedicines.pentamidineIsethionate.prescription(
       nearInterface,
       weight
     );
 
-    expect(typeof Leishmaniasis.prescribePentamidineIsethionate).toBe(
+    expect(typeof Leishmaniasis.leishmaniasisMedicines.pentamidineIsethionate.prescription).toBe(
       'function'
     );
     expect(dose.name).toBeDefined();
@@ -70,12 +70,12 @@ describe('Leishmaniasis smart contract prescription response check', () => {
   });
 
   test('It returns the correct properties for Miltefosine', async () => {
-    const dose = await Leishmaniasis.prescribeMiltefosine(
+    const dose = await Leishmaniasis.leishmaniasisMedicines.miltefosine.prescription(
       nearInterface,
       weight
     );
 
-    expect(typeof Leishmaniasis.prescribeMiltefosine).toBe('function');
+    expect(typeof Leishmaniasis.leishmaniasisMedicines.miltefosine.prescription).toBe('function');
     expect(dose.name).toBeDefined();
     expect(dose.presentation).toBeDefined();
     expect(dose.weightDose).toBeDefined();
@@ -86,13 +86,13 @@ describe('Leishmaniasis smart contract prescription response check', () => {
   });
 
   test('It returns the correct properties for Amphotericin B Liposomal', async () => {
-    const dose = await Leishmaniasis.prescribeAmphotericinBLiposomal(
+    const dose = await Leishmaniasis.leishmaniasisMedicines.amphotericinBliposomal.prescription(
       nearInterface,
       weight,
       'LCM2'
     );
 
-    expect(typeof Leishmaniasis.prescribeAmphotericinBLiposomal).toBe(
+    expect(typeof Leishmaniasis.leishmaniasisMedicines.amphotericinBliposomal.prescription).toBe(
       'function'
     );
     expect(dose.name).toBeDefined();

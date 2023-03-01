@@ -7,7 +7,7 @@
     "footer_presentation": "OKDOSE es una aplicación que apoya el cálculo de la dosificación de medicamentos y tiempo de tratamiento para Leishmaniasis, Malaria, Chagas, Rabia, Tuberculosis y Lepra.",
     "footer_politics": "Políticas y regulaciones",
     "footer_credits": "Créditos",
-    "input_weight_description": "Ingrese el peso del paciente en kg, recuerda que no puede ser menor a {{weight}} kg",
+    "input_weight_description": "Ingresa el peso del paciente en kg, recuerda que no puede ser menor a {{weight}} kg",
     "input_err_lower_bound": "El peso no puede ser menor a {{weight}} kg ingresa un dato valido",
     "input_err_upper_bound": "El peso no puede ser mayor a {{weight}} kg ingresa un dato valido.",
     "card_selection_title": "Selección",
@@ -95,12 +95,7 @@
     },
     "amphotericin_b_liposomal": {
       "name": "Anfotericina B Liposomal",
-      "presentation": [
-        "Anfotericina B liposomal - Frasco Ampolla x 50 mg",
-        "{{dose}} $t(dosage_unit)",
-        "paciente inmunocompetente",
-        "paciente inmunocomprometido"
-      ],
+      "presentation": ["Frasco Ampolla x 50 mg"],
       "dosage_prescription": "{{volumeDose}} al día, infusión durante 2 horas ({{weightDose}})",
       "warning": "No superar 250 mg al día",
       "treatment_time": {

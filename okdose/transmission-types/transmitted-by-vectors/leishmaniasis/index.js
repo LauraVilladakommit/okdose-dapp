@@ -1,78 +1,61 @@
-/**
- * Gets the translation keys and dosage of the smart contract N-Metil Glucamine.
- * @param {NearInterface} nearInterface Class that allows the connection to a near wallet.
- * @param {number} weight Patient's weight in kg to one decimal point
- * @returns {Prescription} It is an object that has the translation keys and the prescribed dosage.
- */
-const prescribeNMetilGlucamine = async (nearInterface, weight) =>
-  nearInterface.viewMethod(
-    process.env.NMETIL_CONTRACT,
-    process.env.CONTRACT_METHOD,
-    {weight}
-  );
+import {getPrescription} from '../../utils';
 
-/**
- * Gets the translation keys and dosage of the smart contract Sodium stibogluconate.
- * @param {NearInterface} nearInterface Class that allows the connection to a near wallet.
- * @param {number} weight Patient's weight in kg to one decimal point
- * @returns {Prescription} It is an object that has the translation keys and the prescribed dosage.
- */
-const prescribeSodiumStibogluconate = async (nearInterface, weight) =>
-  nearInterface.viewMethod(
-    process.env.STIBOGLUCONATE_CONTRACT,
-    process.env.CONTRACT_METHOD,
-    {weight}
-  );
-
-/**
- * Gets the translation keys and dosage of the smart contract Pentamidine isethionate.
- * @param {NearInterface} nearInterface Class that allows the connection to a near wallet.
- * @param {number} weight Patient's weight in kg to one decimal point
- * @returns {Prescription} It is an object that has the translation keys and the prescribed dosage.
- */
-const prescribePentamidineIsethionate = async (nearInterface, weight) =>
-  nearInterface.viewMethod(
-    process.env.PENTAMIDINE_CONTRACT,
-    process.env.CONTRACT_METHOD,
-    {weight}
-  );
-/**
- * Gets the translation keys and dosage of the smart contract Miltefosine.
- * @param {NearInterface} nearInterface Class that allows the connection to a near wallet.
- * @param {number} weight Patient's weight in kg to one decimal point
- * @returns {Prescription} It is an object that has the translation keys and the prescribed dosage.
- */
-const prescribeMiltefosine = async (nearInterface, weight) =>
-  nearInterface.viewMethod(
-    process.env.MILTEFOSINE_CONTRACT,
-    process.env.CONTRACT_METHOD,
-    {weight}
-  );
-
-/**
- * Gets the translation keys and dosage of the smart contract Amphotericin B Liposomalr.
- * @param {NearInterface} nearInterface Class that allows the connection to a near wallet.
- * @param {number} weight Patient's weight in kg to one decimal point
- * @param {string} prescriptionType Type of prescription based on disease can be any of the following:
- * LCM2, LCM3, LV3, LV4, where L = Leishmaniasis, C = Cutaneous, M = Mucocutaneous, V = Visceral
- * and 2, 3, 4 are the concentration in mg/kg/day.
- * @returns {Prescription} It is an object that has the translation keys and the prescribed dosage.
- */
-const prescribeAmphotericinBLiposomal = async (
-  nearInterface,
-  weight,
-  prescriptionType
-) =>
-  nearInterface.viewMethod(
-    process.env.AMPHOTERICINBLIPOSOMAL_CONTRACT,
-    process.env.CONTRACT_METHOD,
-    {weight, prescriptionType}
-  );
-
-export {
-  prescribeNMetilGlucamine,
-  prescribeSodiumStibogluconate,
-  prescribePentamidineIsethionate,
-  prescribeMiltefosine,
-  prescribeAmphotericinBLiposomal
+const leishmaniasisMedicines = {
+  nMetilGlucamine: {
+    name: 'leishmaniasis.n_metil_glucamine.name',
+    presentation: 'leishmaniasis.n_metil_glucamine.presentation',
+    prescription: (nearInterface, params = {}) =>
+      getPrescription(
+        nearInterface,
+        process.env.NMETIL_CONTRACT,
+        process.env.CONTRACT_METHOD,
+        params
+      )
+  },
+  sodiumStibogluconate: {
+    name: 'leishmaniasis.sodium_stibogluconate.name',
+    presentation: 'leishmaniasis.sodium_stibogluconate.presentation',
+    prescription: (nearInterface, params = {}) =>
+      getPrescription(
+        nearInterface,
+        process.env.STIBOGLUCONATE_CONTRACT,
+        process.env.CONTRACT_METHOD,
+        params
+      )
+  },
+  pentamidineIsethionate: {
+    name: 'leishmaniasis.pentamidine_isethionate.name',
+    presentation: 'leishmaniasis.pentamidine_isethionate.presentation',
+    prescription: (nearInterface, params = {}) =>
+      getPrescription(
+        nearInterface,
+        process.env.PENTAMIDINE_CONTRACT,
+        process.env.CONTRACT_METHOD,
+        params
+      )
+  },
+  miltefosine: {
+    name: 'leishmaniasis.miltefosine.name',
+    presentation: 'leishmaniasis.miltefosine.presentation',
+    prescription: (nearInterface, params = {}) =>
+      getPrescription(
+        nearInterface,
+        process.env.MILTEFOSINE_CONTRACT,
+        process.env.CONTRACT_METHOD,
+        params
+      )
+  },
+  amphotericinBliposomal: {
+    name: 'leishmaniasis.amphotericin_b_liposomal.name',
+    presentation: 'leishmaniasis.amphotericin_b_liposomal.presentation',
+    prescription: (nearInterface, params = {}) =>
+      getPrescription(
+        nearInterface,
+        process.env.AMPHOTERICINBLIPOSOMAL_CONTRACT,
+        process.env.CONTRACT_METHOD,
+        params
+      )
+  }
 };
+
+export {leishmaniasisMedicines};

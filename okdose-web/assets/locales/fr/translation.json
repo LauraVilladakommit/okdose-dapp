@@ -9,7 +9,7 @@
     "cutaneous_mococutaneous": "Leishmaniose cutanée et cutanéo-muqueuse",
     "visceral": "Leishmaniose Viscérale",
     "n_metil_glucamine": {
-      "name": "Antimoniate de méglumine",
+      "name": "Antimoniate de Méglumine",
       "presentation": [
         "Amp 1500 mg * 5 ml (Sb5 + 405 mg)",
         "20 $t(dosage_unit)"
@@ -24,7 +24,7 @@
       ]
     },
     "sodium_stibogluconate": {
-      "name": "Stibogluconate de sodium",
+      "name": "Stibogluconate de Sodium",
       "presentation": ["Amp 100 mg/ml", "20 $t(dosage_unit)"],
       "via": "IM",
       "frequency": "chaque jour",
@@ -36,7 +36,7 @@
       ]
     },
     "pentamidine_isethionate": {
-      "name": "Isétionate de pentamidine",
+      "name": "Isétionate de Pentamidine",
       "presentation": ["Vial 300 mg, 60 mg/ml", "4 $t(dosage_unit)"],
       "via": "IM",
       "frequency": "chaque 3 jours",
@@ -65,13 +65,8 @@
       "note": "Posologie divisée en 2 à 3 doses quotidiennes"
     },
     "amphotericin_b_liposomal": {
-      "name": "Amphotéricine B liposomale",
-      "presentation": [
-        "Amphotericin B Liposomal - Bouteille-ampoule x 50 mg",
-        "{{dose}} $t(dosage_unit)",
-        "patient immunocompétent",
-        "patient immunodéprimé"
-      ],
+      "name": "Amphotéricine B Liposomale",
+      "presentation": ["Bouteille-ampoule x 50 mg"],
       "dosage_prescription": "{{volumeDose}} à jour, Infusion pendant 2 heures ({{weightDose}})",
       "warning": "Ne pas dépasser 250 mg par jour",
       "treatment_time": {
