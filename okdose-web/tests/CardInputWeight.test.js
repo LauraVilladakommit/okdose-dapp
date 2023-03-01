@@ -88,7 +88,7 @@ describe('It renders of CardInputWeight component', () => {
     expect(screen.getByText('Selección')).toBeInTheDocument();
     expect(
       screen.getByText(
-        'Ingrese el peso del paciente en kg, recuerda que no puede ser menor a 10 kg'
+        'Ingresa el peso del paciente en kg, recuerda que no puede ser menor a 10 kg'
       )
     ).toBeInTheDocument();
     expect(screen.getByText('Calcular')).toBeInTheDocument();
