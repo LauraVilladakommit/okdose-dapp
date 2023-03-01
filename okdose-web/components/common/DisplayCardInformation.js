@@ -1,11 +1,11 @@
-import forwardArrowIcon from '../../assets/images/icons/forwardArrowIcon.svg';
 import PropTypes from 'prop-types';
+import forwardArrowIcon from '../../assets/images/icons/forwardArrowIcon.svg';
 
 function DisplayCardInformation ({
   title,
   description,
   showViewMore,
-  seeMore,
+  showMore,
   showIcon,
   cardIcon,
   type
@@ -22,13 +22,13 @@ function DisplayCardInformation ({
           {showIcon && <img className='pr-3' src={cardIcon} />}
           <h1>{title}</h1>
         </div>
-        <div className='py-5 text-sm'>
-          <p className='whitespace-pre-line'>{description}</p>
+        <div className='text-sm'>
+          <p className='whitespace-pre-line py-3'>{description}</p>
         </div>
       </div>
       {showViewMore && (
         <div className='flex flex-row justify-end items-center text-sm mb-5'>
-          <p>{seeMore}</p>
+          <p data-testid='show-more'>{showMore}</p>
           <img className='pl-1' src={forwardArrowIcon} alt='icon-next' />
         </div>
       )}
@@ -46,7 +46,7 @@ DisplayCardInformation.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   showViewMore: PropTypes.bool,
-  seeMore: PropTypes.string,
+  showMore: PropTypes.string,
   showIcon: PropTypes.bool,
   cardIcon: PropTypes.string,
   type: PropTypes.string.isRequired

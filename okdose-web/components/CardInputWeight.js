@@ -1,12 +1,10 @@
-import Button from './common/Button';
 import {useEffect, useState} from 'react';
-import AlertCard from './common/AlertCard';
-import arrowRightIcon from '@icons/arrowRightIcon.svg';
-import PropTypes from 'prop-types';
 import {t} from 'i18next';
-
-const MIN_BOUND = 3;
-const MAX_BOUND = 200;
+import PropTypes from 'prop-types';
+import AlertCard from './common/AlertCard';
+import Button from './common/Button';
+import arrowRightIcon from '@icons/arrowRightIcon.svg';
+import {WEIGHT_RANGE} from '../constants';
 
 function CardInputWeight ({
   titleContent,
@@ -16,7 +14,8 @@ function CardInputWeight ({
   titleCard,
   upperBound,
   lowerBound,
-  disableComponent
+  disableComponent,
+  setWeight
 }) {
   const [inputValue, setInputValue] = useState();
   const [fontStyle, setFontStyle] = useState('');
@@ -30,7 +29,7 @@ function CardInputWeight ({
       setButtonStyle('weight');
       setFontStyle('normal');
     }
-  }, []);
+  }, [disableComponent]);
 
   const inputStyle = {
     error: 'text-strong-red placeholder-strong-red',
@@ -53,6 +52,11 @@ function CardInputWeight ({
     } else {
       setFontStyle('normal');
     }
+  }
+
+  function sendWeight (event) {
+    let value = event.target.value;
+    setWeight(value);
   }
 
   return (
@@ -85,6 +89,7 @@ function CardInputWeight ({
           type={buttonStyle}
           title={t('app_info.weight_button')}
           disable={disableComponent}
+          onClick={sendWeight}
         />
       </div>
     </div>
@@ -95,8 +100,8 @@ CardInputWeight.defaultProps = {
   showCategoryIcon: false,
   showTitleCard: false,
   disableComponent: false,
-  lowerBound: MIN_BOUND,
-  upperBound: MAX_BOUND
+  lowerBound: WEIGHT_RANGE.minBound,
+  upperBound: WEIGHT_RANGE.maxBound
 };
 
 CardInputWeight.propTypes = {
