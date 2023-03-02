@@ -3,17 +3,23 @@ import {cleanup, render, screen} from '@testing-library/react';
 import '@testing-library/jest-dom';
 import i18n from '../i18n';
 import {I18nextProvider} from 'react-i18next';
+import {transmissionTypes} from '../../okdose/app';
 import MedicinesList from '../containers/MedicinesList';
 
 describe('Test for MedicinesList container', () => {
   // unmount and cleanup DOM after the test is finished.
   afterEach(cleanup);
 
+  const medicinesList = transmissionTypes.byVectors.diseases.leishmaniasis.medicines;
+
   test('MedicinesList container renders with English translations', () => {
     i18n.changeLanguage('en');
     render(
       <I18nextProvider i18n={i18n}>
-        <MedicinesList selectedDisease={'Leishmaniasis'}/>,
+        <MedicinesList
+          selectedDisease={'Leishmaniasis'}
+          medicines={medicinesList}
+        />,
       </I18nextProvider>
     );
     expect(
@@ -47,7 +53,10 @@ describe('Test for MedicinesList container', () => {
     i18n.changeLanguage('es');
     render(
       <I18nextProvider i18n={i18n}>
-        <MedicinesList selectedDisease={'Leishmaniasis'}/>,
+        <MedicinesList
+          selectedDisease={'Leishmaniasis'}
+          medicines={medicinesList}
+        />,
       </I18nextProvider>
     );
     expect(

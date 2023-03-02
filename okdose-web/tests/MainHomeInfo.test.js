@@ -3,6 +3,7 @@ import {cleanup, render, screen} from '@testing-library/react';
 import '@testing-library/jest-dom';
 import i18n from '../i18n';
 import {I18nextProvider} from 'react-i18next';
+import {transmissionTypes} from '../../okdose/app';
 import MainHomeInfo from '../containers/MainHomeInfo';
 
 describe('Test for MainHomeInfo container', () => {
@@ -27,6 +28,7 @@ describe('Test for MainHomeInfo container', () => {
             weight={50}
             updateWeight={setWeight}
             inputStatus={disable}
+            medicines={{}}
           />
         </I18nextProvider>
       );
@@ -56,6 +58,7 @@ describe('Test for MainHomeInfo container', () => {
             weight={50}
             updateWeight={setWeight}
             inputStatus={disable}
+            medicines={{}}
           />
         </I18nextProvider>
       );
@@ -83,6 +86,7 @@ describe('Test for MainHomeInfo container', () => {
             weight={50}
             updateWeight={setWeight}
             inputStatus={disable}
+            medicines={{}}
           />
       );
       expect(screen.getByLabelText('weight-input')).toBeDisabled()
@@ -91,6 +95,7 @@ describe('Test for MainHomeInfo container', () => {
 
   describe('MainHomeInfo renders the CardInputWeight and MedicinesList components when disease is selected',()=>{
     const disable = false;
+    const medicinesList = transmissionTypes.byVectors.diseases.leishmaniasis.medicines;
 
     test('It renders correctly English translations', () => {
       const disease = 'Leishmaniasis';
@@ -103,6 +108,7 @@ describe('Test for MainHomeInfo container', () => {
             weight={50}
             updateWeight={setWeight}
             inputStatus={disable}
+            medicines={medicinesList}
           />
         </I18nextProvider>
       );
@@ -133,6 +139,7 @@ describe('Test for MainHomeInfo container', () => {
             weight={50}
             updateWeight={setWeight}
             inputStatus={disable}
+            medicines={medicinesList}
           />
         </I18nextProvider>
       );
@@ -160,6 +167,7 @@ describe('Test for MainHomeInfo container', () => {
             weight={50}
             updateWeight={setWeight}
             inputStatus={disable}
+            medicines={medicinesList}
           />
       );
       expect(screen.getByLabelText('weight-input')).toBeEnabled()

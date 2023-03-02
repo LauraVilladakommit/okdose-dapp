@@ -10,6 +10,7 @@ import {HEADER_TYPES, WEIGHT_RANGE} from '../constants';
 function Home () {
   const [loadWelcome, setLoadWelcome] = useState(true);
   const [disease, setDisease] = useState(t('app_info.card_selection_title'));
+  const [medicinesList, setMedicinesList] = useState({});
   const [disable, setDisable] = useState(true);
   const [weight, setWeight] = useState(WEIGHT_RANGE.minBound);
 
@@ -30,7 +31,7 @@ function Home () {
           <p className='mb-2 p-5 text-dark-gray text-center'>
             {t('app_info.dropdown_description')}
           </p>
-          <DropdownMenu selectedDisease={setDisease} inputStatus={setDisable} />
+          <DropdownMenu selectedDisease={setDisease} inputStatus={setDisable} setMedicines={setMedicinesList} />
         </aside>
         <main>
           <div className='hidden 2md:block md:px-10 md:pt-16 md:pb-5 lg:pt-28'>
@@ -39,6 +40,7 @@ function Home () {
               weight={weight}
               updateWeight={setWeight}
               inputStatus={disable}
+              medicines={medicinesList}
             />
           </div>
         </main>

@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import rightIcon from '../../assets/images/icons/rightIcon.svg';
 
-function DropdownMenuButton ({title, selectedDisease, inputStatus}) {
+function DropdownMenuButton ({title, selectedDisease, inputStatus, medicines, setMedicines}) {
   function handleInput () {
     selectedDisease(title);
+    setMedicines(medicines);
     inputStatus(false);
   }
 

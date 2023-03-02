@@ -6,7 +6,7 @@ import byVectorsIcon from '../assets/images/icons/byVectorsIcon.svg';
 import zonosesIcon from '../assets/images/icons/zoonosesIcon.svg';
 import mycobacteriaIcon from '../assets/images/icons/mycobacteriaIcon.svg';
 
-function DropdownMenu ({selectedDisease, inputStatus}) {
+function DropdownMenu ({selectedDisease, inputStatus, setMedicines}) {
   const transmissionTypesIcons = {
     byVectorsIcon: byVectorsIcon,
     mycobacteriaIcon: mycobacteriaIcon,
@@ -25,6 +25,8 @@ function DropdownMenu ({selectedDisease, inputStatus}) {
           title={t(`${transmissionTypes[medium].diseases[disease].name}`)}
           selectedDisease={selectedDisease}
           inputStatus={inputStatus}
+          medicines={transmissionTypes[medium].diseases[disease].medicines}
+          setMedicines={setMedicines}
         />
       ))}
     </Section>

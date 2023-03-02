@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import CardInputWeight from '../components/CardInputWeight';
 import MedicinesList from './MedicinesList';
 
-function MainHomeInfo ({disease, weight, updateWeight, inputStatus}) {
+function MainHomeInfo ({disease, weight, updateWeight, inputStatus, medicines}) {
   return (
     <div>
       <CardInputWeight
@@ -18,7 +18,7 @@ function MainHomeInfo ({disease, weight, updateWeight, inputStatus}) {
         setWeight={updateWeight}
       />
       <div className='pt-5'>
-        <MedicinesList selectedDisease={disease} />
+        <MedicinesList medicines={medicines} />
       </div>
     </div>
   );
@@ -29,6 +29,7 @@ MainHomeInfo.propTypes = {
   weight: PropTypes.number.isRequired,
   updateWeight: PropTypes.func,
   inputStatus: PropTypes.bool,
+  medicines: PropTypes.object.isRequired
 };
 
 export default MainHomeInfo;
